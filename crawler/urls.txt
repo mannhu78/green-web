@@ -1,0 +1,123 @@
+# Ecommerce
+https://shopee.vn
+https://tiki.vn
+https://lazada.vn
+https://amazon.com
+https://ebay.com
+https://aliexpress.com
+https://fptshop.com.vn
+https://cellphones.com.vn
+https://thegioididong.com
+https://dienmayxanh.com
+
+# News
+https://vnexpress.net
+https://tuoitre.vn
+https://thanhnien.vn
+https://zingnews.vn
+https://dantri.com.vn
+https://bbc.com
+https://cnn.com
+https://nytimes.com
+https://theguardian.com
+https://reuters.com
+
+# SaaS / Tech
+https://openai.com
+https://notion.so
+https://vercel.com
+https://netlify.com
+https://slack.com
+https://zoom.us
+https://figma.com
+https://airtable.com
+https://github.com
+https://gitlab.com
+
+# Social
+https://facebook.com
+https://instagram.com
+https://linkedin.com
+https://reddit.com
+https://x.com
+https://tiktok.com
+https://youtube.com
+https://discord.com
+https://pinterest.com
+https://threads.net
+
+# Education
+https://coursera.org
+https://udemy.com
+https://edx.org
+https://khanacademy.org
+https://harvard.edu
+https://stanford.edu
+https://mit.edu
+https://ntu.edu.vn
+https://hcmut.edu.vn
+https://moet.gov.vn
+
+# Government
+https://chinhphu.vn
+https://hochiminhcity.gov.vn
+https://usa.gov
+https://gov.uk
+https://europa.eu
+https://whitehouse.gov
+https://nasa.gov
+https://who.int
+
+# Entertainment
+https://netflix.com
+https://spotify.com
+https://twitch.tv
+https://steamcommunity.com
+https://epicgames.com
+https://disneyplus.com
+https://primevideo.com
+
+# Travel
+https://booking.com
+https://airbnb.com
+https://traveloka.com
+https://tripadvisor.com
+https://agoda.com
+https://skyscanner.com
+
+# Finance
+https://paypal.com
+https://wise.com
+https://stripe.com
+https://visa.com
+https://mastercard.com
+https://vcb.com.vn
+https://techcombank.com.vn
+
+# Forums / Community
+https://stackoverflow.com
+https://dev.to
+https://hashnode.com
+https://medium.com
+https://quora.com
+https://producthunt.com
+
+# Portfolio / Design
+https://behance.net
+https://dribbble.com
+https://awwwards.com
+https://cssdesignawards.com
+
+# Cloud / Infra
+https://aws.amazon.com
+https://cloud.google.com
+https://azure.microsoft.com
+https://digitalocean.com
+https://linode.com
+
+# AI Websites
+https://huggingface.co
+https://anthropic.com
+https://perplexity.ai
+https://stability.ai
+https://deepmind.google

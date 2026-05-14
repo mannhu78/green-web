@@ -1,0 +1,150 @@
+.history-page {
+    min-height: 100vh;
+    background: #020617;
+    padding: 120px 40px 60px;
+    color: white;
+}
+
+.history-page h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    background: linear-gradient(to right,
+            #22c55e,
+            #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+            minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.history-card {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid #1e293b;
+    border-radius: 24px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.history-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(34, 197, 94, 0.08),
+            rgba(59, 130, 246, 0.05));
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.history-card:hover::before {
+    opacity: 1;
+}
+
+.history-card:hover {
+    transform: translateY(-6px);
+    border-color: #22c55e;
+    box-shadow:
+        0 15px 40px rgba(34, 197, 94, 0.18);
+}
+
+.history-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #22c55e;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+.history-card p {
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.6;
+}
+
+.history-card p:last-child {
+    margin-bottom: 0;
+    color: #94a3b8;
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+    padding-top: 14px;
+    margin-top: 16px;
+}
+
+.empty-history {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 80px;
+    font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .history-page {
+        padding: 100px 20px 40px;
+    }
+
+    .history-page h1 {
+        font-size: 32px;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-card {
+        padding: 20px;
+    }
+}
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.history-date-filter {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.history-date-filter:focus {
+    border-color: #22c55e;
+}
+
+.empty-history {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    border-radius: 16px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    color: #94a3b8;
+    font-size: 18px;
+    margin-top: 20px;
+}
