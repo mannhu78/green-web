@@ -26,7 +26,13 @@ dist-ssr/
 # =========================
 
 venv/
+.venv/
 env/
+ENV/
+
+**/venv/
+**/.venv/
+**/env/
 
 __pycache__/
 *.pyc
@@ -77,10 +83,7 @@ crawler_output/
 # Lighthouse / Reports
 # =========================
 
-*.html
-*.json
 reports/
-*.pdf
 
 # =========================
 # Temporary files
