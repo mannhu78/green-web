@@ -1,9 +1,19 @@
 from playwright.sync_api import sync_playwright
 import uuid
 import os
-import time
 
-SCREENSHOT_DIR = "screenshots"
+BASE_DIR = os.path.abspath(
+    os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        ".."
+    )
+)
+
+SCREENSHOT_DIR = os.path.join(
+    BASE_DIR,
+    "screenshots"
+)
 
 os.makedirs(
     SCREENSHOT_DIR,
@@ -22,47 +32,24 @@ def capture_screenshot(url):
     with sync_playwright() as p:
 
         browser = p.chromium.launch(
-            headless=True,
-            args=[
-                "--disable-blink-features=AutomationControlled"
-            ]
+            headless=True
         )
 
-        context = browser.new_context(
-
+        page = browser.new_page(
             viewport={
                 "width": 1366,
                 "height": 768
-            },
-
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/122.0.0.0 Safari/537.36"
-            )
+            }
         )
-
-        page = context.new_page()
-
-        # tránh bị detect automation
-        page.add_init_script("""
-            Object.defineProperty(
-                navigator,
-                'webdriver',
-                {
-                    get: () => undefined
-                }
-            )
-        """)
 
         page.goto(
             url,
-            wait_until="networkidle",
-            timeout=90000
+            wait_until="domcontentloaded",
+            timeout=30000
         )
 
         # chờ render thêm
-        time.sleep(3)
+        page.wait_for_timeout(4000)
 
         page.screenshot(
             path=path,

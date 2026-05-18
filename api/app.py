@@ -10,6 +10,7 @@ from api.extensions import db, mail
 from dotenv import load_dotenv
 
 from flask import send_from_directory
+from api.routes.shap_route import ( shap_bp )
 
 import sys
 import os
@@ -20,6 +21,13 @@ BASE_DIR = os.path.abspath(
         ".."
     )
 )
+
+SCREENSHOT_DIR = os.path.join(
+    BASE_DIR,
+    "screenshots"
+)
+
+print("SCREENSHOT_DIR =", SCREENSHOT_DIR)
 
 load_dotenv()
 
@@ -84,6 +92,7 @@ jwt = JWTManager(app)
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(analyze_bp)
+app.register_blueprint(shap_bp)
 
 @app.route("/")
 def home():
@@ -92,13 +101,23 @@ def home():
         "message": "Green Web API Running"
     }
 
-@app.route(
-    "/screenshots/<filename>"
-)
-def screenshots(filename):
+@app.route('/screenshots/<filename>')
+def serve_screenshot(filename):
+
+    file_path = os.path.join(
+        SCREENSHOT_DIR,
+        filename
+    )
+
+    print("Trying file:", file_path)
+
+    print(
+        "Exists:",
+        os.path.exists(file_path)
+    )
 
     return send_from_directory(
-        "screenshots",
+        SCREENSHOT_DIR,
         filename
     )
 

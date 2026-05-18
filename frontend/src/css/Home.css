@@ -17,12 +17,23 @@ body {
 ========================= */
 
 .home-container {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left,
+            rgba(34, 197, 94, 0.08),
+            transparent 30%),
+        #020617;
+
+    color: #fff;
+
+    padding:
+        40px 20px 80px;
 
     max-width: 1400px;
 
     margin: auto;
 
-    padding: 40px 24px 80px;
+
 }
 
 .title {
@@ -31,11 +42,29 @@ body {
 
     font-weight: 800;
 
-    margin-bottom: 32px;
+    line-height: 1.1;
 
-    color: white;
+    margin-bottom: 18px;
 
-    letter-spacing: -1px;
+    background: linear-gradient(90deg,
+            #22c55e,
+            #4ade80,
+            #86efac);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;
+}
+
+.hero-subtitle {
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 18px;
+
+    margin-bottom: 40px;
 }
 
 
@@ -47,19 +76,21 @@ body {
 
     display: flex;
 
-    gap: 16px;
+    gap: 14px;
 
-    align-items: center;
+    background: rgba(15, 23, 42, 0.9);
 
-    background: #0f172a;
+    border: 1px solid rgba(34, 197, 94, 0.15);
 
-    border: 1px solid #1e293b;
+    padding: 14px;
 
-    border-radius: 24px;
+    border-radius: 22px;
 
-    padding: 20px;
+    margin-bottom: 32px;
 
-    transition: 0.3s;
+    box-shadow:
+        0 0 0 1px rgba(34, 197, 94, 0.04),
+        0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
 .analyze-box:hover {
@@ -73,11 +104,11 @@ body {
 
     background: #020617;
 
-    border: 1px solid #334155;
+    border: 1px solid #1e293b;
 
     color: white;
 
-    padding: 16px 18px;
+    padding: 16px 20px;
 
     border-radius: 16px;
 
@@ -93,7 +124,7 @@ body {
     border-color: #22c55e;
 
     box-shadow:
-        0 0 0 4px rgba(34, 197, 94, 0.15);
+        0 0 0 3px rgba(34, 197, 94, 0.15);
 }
 
 .url-input::placeholder {
@@ -102,24 +133,24 @@ body {
 }
 
 .analyze-btn {
-
-    border: none;
-
-    padding: 16px 24px;
-
-    border-radius: 16px;
-
-    background: linear-gradient(135deg,
+    background:
+        linear-gradient(135deg,
             #22c55e,
             #16a34a);
 
     color: white;
 
+    border: none;
+
+    padding: 0 26px;
+
+    border-radius: 16px;
+
     font-weight: 700;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .analyze-btn:hover {
@@ -127,7 +158,111 @@ body {
     transform: translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(34, 197, 94, 0.25);
+        0 10px 25px rgba(34, 197, 94, 0.35);
+
+}
+
+.kpi-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.kpi-card {
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(2, 6, 23, 0.95));
+
+    border:
+        1px solid rgba(34, 197, 94, 0.08);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.kpi-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -60px;
+    right: -60px;
+
+    width: 140px;
+    height: 140px;
+
+    background:
+        radial-gradient(circle,
+            rgba(34, 197, 94, 0.12),
+            transparent);
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+}
+
+.kpi-card span {
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+.kpi-card h2 {
+    margin-top: 12px;
+
+    font-size: 44px;
+
+    color: #22c55e;
+}
+
+.result-card,
+.chart-card,
+.preview-card,
+.eco-card,
+.eco-mode-card,
+.green-host-card,
+.suggestion-card {
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(2, 6, 23, 0.95));
+
+    border:
+        1px solid rgba(34, 197, 94, 0.08);
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    margin-bottom: 32px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(10px);
+}
+
+.chart-card h2,
+.preview-card h2,
+.eco-card h2,
+.eco-mode-card h2,
+.green-host-card h2,
+.suggestion-card h2 {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+
+    color: #f8fafc;
 }
 
 
@@ -143,27 +278,32 @@ body {
 }
 
 .progress-track {
-
-    width: 100%;
-
-    height: 16px;
-
-    background: #1e293b;
+    height: 14px;
 
     border-radius: 999px;
 
+    background: #0f172a;
+
     overflow: hidden;
+
+    margin-top: 18px;
 }
 
 .progress-bar {
 
     height: 100%;
 
-    background: linear-gradient(90deg,
-            #22c55e,
-            #16a34a);
+    border-radius: 999px;
 
-    transition: width 0.4s ease;
+    background:
+        linear-gradient(90deg,
+            #22c55e,
+            #4ade80);
+
+    box-shadow:
+        0 0 20px rgba(34, 197, 94, 0.45);
+
+    transition: width 0.5s;
 }
 
 .progress-wrapper p {
@@ -180,20 +320,7 @@ body {
    Result Summary
 ========================= */
 
-.result-card {
 
-    margin-top: 30px;
-
-    background: #0f172a;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 24px;
-
-    padding: 28px;
-
-    transition: 0.3s;
-}
 
 .result-card:hover {
 
@@ -225,21 +352,7 @@ body {
    Info Cards
 ========================= */
 
-.eco-card,
-.eco-mode-card {
 
-    margin-top: 24px;
-
-    background: #0f172a;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 24px;
-
-    padding: 24px;
-
-    transition: 0.3s;
-}
 
 .eco-card:hover,
 .eco-mode-card:hover {
@@ -321,18 +434,7 @@ body {
    Chart Cards
 ========================= */
 
-.chart-card {
 
-    background: #0f172a;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 24px;
-
-    padding: 24px;
-
-    transition: 0.3s;
-}
 
 .chart-card:hover {
 
@@ -355,18 +457,7 @@ body {
    Suggestions
 ========================= */
 
-.suggestion-card {
 
-    background: #0f172a;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 24px;
-
-    padding: 24px;
-
-    transition: 0.3s;
-}
 
 .suggestion-card:hover {
 
@@ -488,81 +579,379 @@ body {
     transform: translateY(-2px);
 }
 
+
+
 .preview-card {
 
-    margin-top: 30px;
+    margin-top: 40px;
 
-    background: #0f172a;
+    padding: 24px;
 
-    border: 1px solid #1e293b;
+    border-radius: 28px;
 
-    border-radius: 24px;
+    background:
+        linear-gradient(145deg,
+            rgba(15, 23, 42, 0.96),
+            rgba(30, 41, 59, 0.92));
 
-    padding: 20px;
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.preview-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    gap: 20px;
+}
+
+.preview-header h2 {
+
+    color: white;
+    margin-bottom: 6px;
+}
+
+.preview-header p {
+
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.preview-status {
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.25);
+
+    color: #4ade80;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.preview-image-wrapper {
+
+    position: relative;
 
     overflow: hidden;
 
-    transition: 0.3s;
-}
-
-.preview-card:hover {
-
-    border-color: #22c55e;
-
-    transform: translateY(-4px);
-}
-
-.preview-card h2 {
-
-    margin-bottom: 20px;
-
-    font-size: 24px;
-
-    color: white;
+    border-radius: 22px;
 }
 
 .website-preview {
 
     width: 100%;
 
-    max-height: 500px;
+    display: block;
 
+    border-radius: 22px;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.preview-image-wrapper:hover .website-preview {
+
+    transform: scale(1.03);
+}
+
+.preview-overlay {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(to top,
+            rgba(2, 6, 23, 0.92),
+            transparent);
+}
+
+.preview-overlay-content {
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(10px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 12px 18px;
+
+    border-radius: 16px;
+
+    color: white;
+
+    min-width: 120px;
+}
+
+.preview-overlay-content span {
+
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.preview-overlay-content strong {
+
+    font-size: 20px;
+
+    color: #4ade80;
+}
+.website-preview {
+    aspect-ratio: 16/9;
     object-fit: cover;
-
-    object-position: top;
-
-    border-radius: 18px;
-
-    border: 1px solid #1e293b;
-
-    transition: 0.3s;
 }
 
-.website-preview:hover {
-
-    transform: scale(1.01);
-}
-
-.green-host-card {
-
-    margin-top: 20px;
-
-    padding: 20px;
-
-    background: #0f172a;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 18px;
-
-    transition: 0.3s;
-}
 
 .green-host-card:hover {
 
     border-color: #22c55e;
 
     transform: translateY(-4px);
+}
+
+
+
+
+
+/* ========================= */
+/* AI Result */
+/* ========================= */
+
+.risk-low,
+.risk-medium,
+.risk-high {
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.risk-low {
+
+    background: rgba(34, 197, 94, 0.15);
+
+    color: #22c55e;
+
+    border: 1px solid #22c55e;
+}
+
+.risk-medium {
+
+    background: rgba(245, 158, 11, 0.15);
+
+    color: #f59e0b;
+
+    border: 1px solid #f59e0b;
+}
+
+.risk-high {
+
+    background: rgba(239, 68, 68, 0.15);
+
+    color: #ef4444;
+
+    border: 1px solid #ef4444;
+}
+
+/* ========================= */
+/* SHAP CARD */
+/* ========================= */
+.shap-card {
+    margin-top: 28px;
+
+    background:
+        rgba(2, 6, 23, 0.7);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.08);
+
+    border-radius: 22px;
+
+    padding: 32px;
+}
+
+.shap-description {
+    color: #94a3b8;
+
+    margin-bottom: 22px;
+
+    line-height: 1.6;
+}
+
+.shap-row {
+    margin-bottom: 18px;
+}
+
+.shap-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.shap-feature-name {
+    color: white;
+
+    font-weight: 600;
+}
+
+.shap-bar-wrapper {
+    height: 12px;
+
+    background: #0f172a;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.shap-bar {
+    height: 100%;
+
+    border-radius: 999px;
+
+    transition: 0.4s;
+}
+
+.positive-bar {
+    background:
+        linear-gradient(90deg,
+            #ef4444,
+            #f97316);
+}
+
+.negative-bar {
+    background:
+        linear-gradient(90deg,
+            #22c55e,
+            #4ade80);
+}
+
+.custom-tooltip {
+    background: #0f172a;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: 14px;
+    padding: 14px;
+    color: white;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.custom-tooltip h4 {
+    margin-bottom: 8px;
+    color: #4ade80;
+}
+
+.metric-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.pie-total-text {
+    fill: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pie-total-value {
+    fill: #22c55e;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.resource-legend {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    background: rgba(15, 23, 42, 0.7);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 12px;
+
+    color: #e2e8f0;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.resource-insight {
+    margin-top: 18px;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    border: 1px solid rgba(34, 197, 94, 0.25);
+
+    color: #d1fae5;
+
+    line-height: 1.6;
+}
+
+.resource-insight strong {
+    margin-left: 6px;
+    color: #4ade80;
 }
 
 /* =========================
@@ -579,31 +968,38 @@ body {
 
 @media (max-width: 768px) {
 
-    .home-container {
-
-        padding: 24px 16px 60px;
+    .title {
+        font-size: 36px;
     }
 
-    .title {
-
-        font-size: 38px;
+    .hero-subtitle {
+        font-size: 15px;
     }
 
     .analyze-box {
 
         flex-direction: column;
 
-        align-items: stretch;
+
     }
 
     .analyze-btn {
 
         width: 100%;
+
+        height: 52px;
     }
 
-    .result-card h2 {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 
-        font-size: 28px;
+    .kpi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .chart-card {
+        overflow-x: hidden;
     }
 }
 

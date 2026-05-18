@@ -95,6 +95,12 @@ function History() {
         setFilteredHistories(filtered)
     }
 
+    const labelMap = {
+        green: "🌱 Website xanh",
+        moderate: "⚡ Phát thải trung bình",
+        heavy: "🔥 Phát thải carbon cao",
+        error: "❌ Phân tích thất bại"
+    }
     return (
         <>
         <Header/>
@@ -138,20 +144,21 @@ function History() {
                                     </h3>
 
                                     <p>
-                                        ⚡ Performance:
-                                        {item.performance_score}
+                                        ⚡ Điểm hiệu suất:
+                                        <strong> {item.performance_score}</strong>
                                     </p>
 
                                     <p>
                                         🌱 CO₂:
-                                        {item.co2} g
+                                        <strong> {item.co2} g</strong>
                                     </p>
 
                                     <p>
-                                        Label:
-                                        {item.green_label}
+                                        📊 Kết quả phân tích:
+                                        <strong>
+                                            {labelMap[item.green_label] || item.green_label}
+                                        </strong>
                                     </p>
-
                                     <p>
                                         📅 {
                                             new Date(
